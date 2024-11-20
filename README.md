@@ -10,7 +10,7 @@
 * Backend: Spring Boot (JPA, SSE: Server Sent Events)
 
 OCI Resource Manager에서 바로 배포하여 테스트해볼 수 있는 스택입니다. (리전 구독 및 리소스 리밋 체크 필요)  
-배포 리전: **Seoul**, Default Shape: **VM.Standard.E4.Flex**  
+배포 리전: **Seoul**, Default Shape: **VM.Standard.E4.Flex**, Database: **ADB 23ai**  
 [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=ap-seoul-1&zipUrl=https://github.com/the-team-oasis/genaitf-selectairagappdemo-rm/archive/refs/heads/main.zip)
 
 ## Instructions
