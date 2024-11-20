@@ -1,0 +1,23 @@
+#cloud-config
+users:
+ - default
+ - name: opc
+   sudo: ['ALL=(ALL) NOPASSWD:ALL']
+   groups: sudo
+   shell: /bin/bash
+
+write_files:
+  - path: /home/opc/demo/wallet.b64
+    content: |
+      ${wallet_content}
+    owner: opc:opc
+    permissions: '0644'
+
+runcmd:
+- |
+  #!/bin/bash
+  base64 --decode /home/opc/demo/wallet.b64 > /home/opc/demo/wallet.zip
+  unzip /home/opc/demo/wallet.zip -d /home/opc/demo/wallet
+  sudo -i -u opc bash -c "sql -cloudconfig /home/opc/demo/wallet.zip admin/WelCome123##@myatp_medium @/home/opc/demo/sql/create_profile_vectoridx.sql"
+  sudo -i -u opc bash -c "cd /home/opc/demo/springboot-selectai-api && nohup mvn spring-boot:run > spring.log 2>&1 &"
+  sudo -i -u opc bash -c "cd /home/opc/demo/react-selectairag-chatapp && npm run build && nohup node server.js > reactjs.log 2>&1 &"
