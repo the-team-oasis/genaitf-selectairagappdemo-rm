@@ -4,7 +4,7 @@
 ![](images/architecture.png)
 
 ### User Interface
-![](images/SelectAI_RAG_Demo.gif)
+![](images/SelectAI_RAG_Demo.png)
 
 * Frontend: ReactJS + Tailwind CSS
 * Backend: Spring Boot (JPA, SSE: Server Sent Events)
