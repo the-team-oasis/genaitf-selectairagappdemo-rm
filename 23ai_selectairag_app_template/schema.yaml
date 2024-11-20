@@ -41,7 +41,7 @@ variables:
   availability_domain:
     title: Availability domain
     type: oci:identity:availabilitydomain:name
-    required: false
+    required: true
     dependsOn:
       compartmentId: ${compartment_ocid}
   compute_count:
